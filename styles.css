@@ -1,14 +1,44 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 2%;
     background-color: rgb(250, 241, 241);
 }
 
-#container1, #container2, #container3, #container4 {
+.main {
+    width: calc(100vw - 300px);
+}
+
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+
+.menu a {
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+    font-size: 22px;
+    transition: ease 0.4s;
+    margin-left: auto;
+    text-align: right;
+}
+
+.buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 14px;
     margin: auto;
     width: 100%;
     margin-top: 10px;
@@ -20,8 +50,8 @@ body {
     text-decoration: none;
     text-align: center;
     width: fit-content;
-    padding: 10px;
-    font-size: 20px;
+    padding: 8px;
+    font-size: 18px;
     transition: ease 0.4s;
     background-color: black;
 }
@@ -36,6 +66,49 @@ body {
 #container3 .link:hover{ background-color: rgb(64, 174, 101); }
 #container4 .link:hover{ background-color: rgb(255, 167, 96); }
 
+#container5 .link{ background-color: rgb(79, 126, 255); }
+#container6 .link{ background-color: rgb(18, 81, 255); }
+#container7 .link{ background-color: rgb(0, 54, 202); }
+
+#container8 .link{ background-color: rgb(181, 101, 218); }
+#container9 .link{ background-color: rgb(164, 46, 219); }
+#container10 .link{ background-color: rgb(112, 5, 161); }
+
+#container11 .link{ background-color: rgb(199, 91, 127); }
+#container12 .link{ background-color: rgb(173, 26, 75); }
+#container13 .link{ background-color: rgb(119, 7, 45); }
+
+#container14 .link{ background-color: rgb(146, 190, 65); }
+#container15 .link{ background-color: rgb(98, 139, 21); }
+#container16 .link{ background-color: rgb(62, 90, 9); }
+
+#container17 .link{ background-color: rgb(211, 150, 59); }
+#container18 .link{ background-color: rgb(161, 110, 32); }
+#container19 .link{ background-color: rgb(114, 71, 6); }
+
+#container20 .link{ background-color: rgb(159, 160, 84); }
+#container21 .link{ background-color: rgb(104, 105, 32); }
+#container22 .link{ background-color: rgb(69, 70, 5); }
+
+#container5 .link:hover,
+#container6 .link:hover,
+#container7 .link:hover,
+#container8 .link:hover,
+#container9 .link:hover,
+#container10 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+#container4 .link:hover,
+
 hr{
     border: none;
     height: 4px;
@@ -46,4 +119,25 @@ hr{
 .section{
     font-size: 40px;
     font-weight: bolder;
+    padding-top: 15px;
+}
+
+.sub-section{
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .menu {
+        display: none;
+    }
+    
+    .main {
+        width: 100%;
+    }
+
+    .link {
+        font-size: 16px;
+    }
 }
