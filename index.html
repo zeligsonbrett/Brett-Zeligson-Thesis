@@ -10,25 +10,106 @@
 </head>
 
 <body>
-    <span class="section">LA Socioeconomic Data</span>
-    <div id="container1"></div>
+    <div class="menu">
+        <a href="#la-geo">LA Geo Data</a>
+        <a href="#la-socio">LA Socio Data</a>
+        <br>
+        <a href="#nyc-geo">NYC Geo Data</a>
+        <a href="#nyc-socio">NYC Socio Data</a>
+        <br>
+        <a href="#la-lin">LA Linear Model</a>
+        <a href="#la-mlp">LA MLP Model</a>
+        <a href="#la-gcnn">LA GCNN Model</a>
+        <br>
+        <a href="#nyc-lin">NYC Linear Model</a>
+        <a href="#nyc-mlp">NYC MLP Model</a>
+        <a href="#nyc-gcnn">NYC GCNN Model</a>
+    </div>
+    <div class="main">
+        <span id="la-geo" class="section">LA Geographic Data</span>
+        <div class="buttons" id="container2"></div>
+        <span id="la-socio" class="section">LA Socioeconomic Data</span>
+        <div class="buttons" id="container1"></div>
+        <hr>
+        <br>
+        <span id="nyc-geo" class="section">NYC Geographic Data</span>
+        <div class="buttons" id="container4"></div>
+        <span id="nyc-socio" class="section">NYC Socioeconomic Data</span>
+        <div class="buttons" id="container3"></div>
+        <hr>
+        <br>
+        <span id="la-lin" class="section">LA Linear Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container5"></div>
 
-    <span class="section">LA Geographic Data</span>
-    <div id="container2"></div>
-<hr>
-<br>
-    <span class="section">NYC Socioeconomic Data</span>
-    <div id="container3"></div>
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container6"></div>
 
-    <span class="section">NYC Geographic Data</span>
-    <div id="container4"></div>
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container7"></div>
+        <hr>
+        <br>
+        <span id="la-mlp" class="section">LA MLP Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container8"></div>
+
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container9"></div>
+
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container10"></div>
+        <hr>
+        <br>
+        <span id="la-gcnn" class="section">LA GCNN Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container11"></div>
+
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container12"></div>
+
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container13"></div>
+        <hr>
+        <br>
+        <span id="nyc-lin" class="section">NYC Linear Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container14"></div>
+
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container15"></div>
+
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container16"></div>
+        <hr>
+        <br>
+        <span id="nyc-mlp" class="section">NYC MLP Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container17"></div>
+
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container18"></div>
+
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container19"></div>
+        <hr>
+        <br>
+        <span id="nyc-gcnn" class="section">NYC GCNN Model</span><br><br>
+        <span class="section sub-section">Predicted Values</span>
+        <div class="buttons" id="container20"></div>
+
+        <span class="section sub-section">Percent Error</span>
+        <div class="buttons" id="container21"></div>
+
+        <span class="section sub-section">Average Percent Error</span>
+        <div class="buttons" id="container22"></div>
+    </div>
 </body>
 
 <script>
-    function makeLinks(linkList, containerID){
+    function makeLinks(linkList, containerID) {
         let container = document.getElementById(containerID);
 
-        for (let i = 0; i < linkList.length; i++){
+        for (let i = 0; i < linkList.length; i++) {
             let newP = document.createElement("a");
             let niceName = linkList[i].split('/')
             niceName = niceName[niceName.length - 1]
@@ -45,11 +126,51 @@
     const la_geo = ['https://zeligsonbrett.github.io/thesis-visuals/LA/geo/FIPS.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Average-Temperature-(C).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Average-Elevation-(ft).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Average-Cloud-Transmittance.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Average-Dew-Point-Temperature-(C).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Average-Annual-Precipitation-(mm).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Tree-Canopy-Cover.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Imperviousness.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-Town-Hall-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-Hospital-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-Police-Station-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-Fire-Department-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-University-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Building-Value-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Agriculture-Value-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/National-Risk-Index-Composite-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Expected-Annual-Loss-Composite-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Social-Vulnerability-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Community-Resilience-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Closest-Major-Center-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Distance-to-Nearest-Water-Body-or-Coast-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/LA/geo/Percent-Developed.html']
     const nyc_socio = ['https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/FIPS.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/NYC/socio/Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
     const nyc_geo = ['https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/FIPS.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Average-Temperature-(C).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Average-Elevation-(ft).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Average-Cloud-Transmittance.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Average-Dew-Point-Temperature-(C).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Average-Annual-Precipitation-(mm).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Tree-Canopy-Cover.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Imperviousness.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-Town-Hall-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-Hospital-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-Police-Station-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-Fire-Department-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-University-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Building-Value-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Agriculture-Value-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/National-Risk-Index-Composite-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Expected-Annual-Loss-Composite-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Social-Vulnerability-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Community-Resilience-Score.html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Closest-Major-Center-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Distance-to-Nearest-Water-Body-or-Coast-(m).html', 'https://zeligsonbrett.github.io/thesis-visuals/NYC/geo/Percent-Developed.html']
-    
+
+    const la_linear_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const la_linear_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const la_linear_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/LA/Average-Socioeconomic-Prediction-Percent-Error.html']
+    const la_mlp_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const la_mlp_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const la_mlp_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/LA/Average-Socioeconomic-Prediction-Percent-Error.html']
+    const la_gcnn_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const la_gcnn_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const la_gcnn_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/LA/Average-Socioeconomic-Prediction-Percent-Error.html']
+
+    const nyc_linear_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const nyc_linear_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const nyc_linear_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/Linear/NYC/Average-Socioeconomic-Prediction-Percent-Error.html']
+    const nyc_mlp_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const nyc_mlp_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const nyc_mlp_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/MLP/NYC/Average-Socioeconomic-Prediction-Percent-Error.html']
+    const nyc_gcnn_pred = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Median-Age.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Average-Household-Size.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Median-Household-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Per-Capita-Income-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Gini-Index.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Median-Gross-Rent-as-Percentage-of-Household-Income.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Median-Gross-Rent-($).html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Percentage-of-Population-Unemployed.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Percentage-of-Population-without-High-School-Diploma.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Predicted-Percentage-of-Population-with-Bachelor's-Degree-or-More.html"]
+    const nyc_gcnn_perc = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Median-Age-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Average-Household-Size-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Median-Household-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Per-Capita-Income-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Gini-Index-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Median-Gross-Rent-as-Percentage-of-Household-Income-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Median-Gross-Rent-($)-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Percentage-of-Population-Unemployed-Percent-Error.html', 'https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Percentage-of-Population-without-High-School-Diploma-Percent-Error.html', "https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Percentage-of-Population-with-Bachelor's-Degree-or-More-Percent-Error.html"]
+    const nyc_gcnn_avg = ['https://zeligsonbrett.github.io/thesis-visuals/Results/GCNN/NYC/Average-Socioeconomic-Prediction-Percent-Error.html']
+
     makeLinks(la_socio, "container1")
     makeLinks(la_geo, "container2")
     makeLinks(nyc_socio, "container3")
     makeLinks(nyc_geo, "container4")
+
+    makeLinks(la_linear_pred, "container5")
+    makeLinks(la_linear_perc, "container6")
+    makeLinks(la_linear_avg, "container7")
+    makeLinks(la_mlp_pred, "container8")
+    makeLinks(la_mlp_perc, "container9")
+    makeLinks(la_mlp_avg, "container10")
+    makeLinks(la_gcnn_pred, "container11")
+    makeLinks(la_gcnn_perc, "container12")
+    makeLinks(la_gcnn_avg, "container13")
+
+    makeLinks(nyc_linear_pred, "container14")
+    makeLinks(nyc_linear_perc, "container15")
+    makeLinks(nyc_linear_avg, "container16")
+    makeLinks(nyc_mlp_pred, "container17")
+    makeLinks(nyc_mlp_perc, "container18")
+    makeLinks(nyc_mlp_avg, "container19")
+    makeLinks(nyc_gcnn_pred, "container20")
+    makeLinks(nyc_gcnn_perc, "container21")
+    makeLinks(nyc_gcnn_avg, "container22")
 </script>
 
 
