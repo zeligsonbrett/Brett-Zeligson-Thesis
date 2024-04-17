@@ -131,8 +131,23 @@ hr{
     margin-top: 20px;
 }
 
+.credits {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: right;
+    color: rgb(69, 70, 5);
+}
+
+.credits span{
+    font-size: 25px;
+    color: rgb(159, 160, 84);
+}
+
 @media screen and (max-width: 800px) {
-    .menu {
+    .menu, .credits {
         display: none;
     }
     
